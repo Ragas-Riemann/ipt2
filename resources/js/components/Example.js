@@ -1,24 +1,78 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState } from "react";
 
-function Example() {
+export default function Example() {
+    const [fname, setFirstname] = useState("");
+    const [lname, setLastname] = useState("");
+    const [profiles, setProfiles] = useState([]);
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post("/api/register", {
+                fname,
+                lname,
+            });
+            alert("Profile created!");
+            setFirstname("");
+            setLastname("");
+        } catch (error) {
+            alert("Error creating profile.");
+        }
+    };
+
+
+    const fetchProfiles = async () => {
+        try {
+            const response = await axios.get("/api/profiles"); // Use the correct endpoint
+            setProfiles(response.data); // Set all profiles to state
+        } catch (error) {
+            console.error("Error fetching profiles:", error);
+        }
+    };
+
+
+    useEffect(() => {
+        fetchProfiles();
+    }, []);
+
+
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
-
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
+        <div className="home">
+            <div className="container">
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Firstname"
+                        value={fname}
+                        onChange={(e) => setFirstname(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Lastname"
+                        value={lname}
+                        onChange={(e) => setLastname(e.target.value)}
+                    />
+                    <input type="submit" />
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {profiles.map((profile) => (
+                            <tr key={profile.id}>
+                                <td>{profile.fname}</td>
+                                <td>{profile.lname}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );
 }
 
-export default Example;
-
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
-}

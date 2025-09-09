@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home/{any?}', function () {
+    return view('home');
+})->where('any', '^(?!api).*$');
+
+Route::get('/example/{any?}', function () {
+    return view('example');
+})->where('any', '^(?!api).*$');
