@@ -28,5 +28,9 @@
     <a href="{{ route('students.show') }}">
         <button>Show Database</button>
     </a>
+
+        <a href="{{ route('dashboard') }}">
+        <button>Back to Dashboard</button>
+    </a>
 </body>
 </html>
