@@ -7,6 +7,6 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
-    <div id="root"></div> <!-- React will mount here -->
+    <div id="app"></div>
 </body>
 </html>

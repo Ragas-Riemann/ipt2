@@ -2,19 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\AuthController;
 
+// Dashboard (home)
 Route::get('/', function () {
     return view('dashboard');   // loads resources/views/dashboard.blade.php
 })->name('dashboard');
 
-Route::get('/students', [PersonController::class, 'index'])->name('students');
-Route::post('/students/store', [PersonController::class, 'store'])->name('students.store');
-Route::get('/students/show', [PersonController::class, 'show'])->name('students.show');
+// API endpoints for students
+Route::get('/students', [PersonController::class, 'index']);  // fetch all students
+Route::post('/students', [PersonController::class, 'store']); // store student
 
-
-use App\Http\Controllers\AuthController;
-
+// Authentication
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// 🔹 Catch-all route for React Router (put at the very bottom)
+Route::get('/{any}', function () {
+    return view('dashboard');  // serves the React app
+})->where('any', '.*');

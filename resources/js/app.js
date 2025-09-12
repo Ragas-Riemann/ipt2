@@ -13,3 +13,6 @@ import './bootstrap';
  */
 
 import Example from "./components/Example.jsx";
+import "./components/Dashboard.js";
+import "./components/Students.js";
+import "./components/ShowStudents.js";
