@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonController;
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard');   // loads resources/views/dashboard.blade.php
 })->name('dashboard');
 
 Route::get('/students', [PersonController::class, 'index'])->name('students');

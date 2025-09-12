@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   return (
     <div id="homepage">
-        <p>fhhfiuh</p>
+        <p>Home Page</p>
     </div>
 
   )
 }
+s

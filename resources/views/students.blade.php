@@ -1,36 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Students</title>
+    @vite('resources/sass/students.scss')
 </head>
 <body>
-    <h1>Add a Student</h1>
+    <div class="students-page">
+        <h1>👨‍🎓 Manage Students</h1>
 
-    @if(session('success'))
-        <p style="color: green;">{{ session('success') }}</p>
-    @endif
+        @if(session('success'))
+            <div class="alert success">{{ session('success') }}</div>
+        @endif
 
-    <form method="POST" action="{{ route('students.store') }}">
-        @csrf
-        <label>First Name:</label>
-        <input type="text" name="first_name" required><br><br>
+        <form method="POST" action="{{ route('students.store') }}" class="students-form">
+            @csrf
 
-        <label>Last Name:</label>
-        <input type="text" name="last_name" required><br><br>
+            <label>First Name:</label>
+            <input type="text" name="first_name" required>
 
-        <label>Age:</label>
-        <input type="number" name="age" required><br><br>
+            <label>Last Name:</label>
+            <input type="text" name="last_name" required>
 
-        <button type="submit">Submit</button>
-    </form>
+            <label>Age:</label>
+            <input type="number" name="age" required>
 
-    <br>
-    <a href="{{ route('students.show') }}">
-        <button>Show Database</button>
-    </a>
+            <button type="submit" class="btn-primary">➕ Add Student</button>
+        </form>
 
-        <a href="{{ route('dashboard') }}">
-        <button>Back to Dashboard</button>
-    </a>
+        <div class="actions">
+            <a href="{{ route('students.show') }}">
+                <button class="btn-secondary">📋 Show Database</button>
+            </a>
+
+            <a href="{{ route('dashboard') }}">
+                <button class="btn-danger">⬅ Back to Dashboard</button>
+            </a>
+        </div>
+    </div>
 </body>
 </html>

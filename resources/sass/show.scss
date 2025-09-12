@@ -1,0 +1,64 @@
+/* ===== Show Page Styling (Sky Blue Theme) ===== */
+
+.show-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+.show-page h1 {
+  text-align: center;
+  color: #1E88E5;
+  margin-bottom: 1.5rem;
+}
+
+/* Table */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.students-table th {
+  background: #1E88E5;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.students-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.students-table tr:nth-child(even) {
+  background: #f5f9ff;
+}
+
+.students-table tr:hover {
+  background: #e3f2fd;
+}
+
+/* Button */
+.btn-back {
+  background: #1E88E5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn-back:hover {
+  background: #1565C0;
+}

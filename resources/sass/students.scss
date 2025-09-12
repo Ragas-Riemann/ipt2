@@ -1,0 +1,101 @@
+/* ===== Students Page Styling (Sky Blue Theme) ===== */
+
+/* Page Layout */
+.students-page {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.students-page h1, 
+.students-page h2 {
+  color: #1E88E5;
+  margin-bottom: 1rem;
+}
+
+/* Form */
+.students-form label {
+  font-weight: bold;
+  display: block;
+  margin: 8px 0 4px;
+}
+
+.students-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.students-form input:focus {
+  border-color: #1E88E5;
+  box-shadow: 0 0 6px rgba(30,136,229,0.3);
+  outline: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #1E88E5;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #1565C0;
+}
+
+.btn-secondary {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px;
+}
+
+.btn-secondary:hover {
+  background: #2E7D32;
+}
+
+.btn-danger {
+  background: #e53935;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px;
+}
+
+.btn-danger:hover {
+  background: #b71c1c;
+}
+
+/* Alerts */
+.alert.success {
+  background: #4CAF50;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
